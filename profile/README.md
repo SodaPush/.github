@@ -1,6 +1,8 @@
 # SodaPush
 
-SodaPush is an open-source, self-hosted Apple Push Notification service. It combines a portable server, a native SwiftUI administration client, and a Swift SDK so teams can own their device data and APNs delivery infrastructure.
+SodaPush is an open-source APNs backend you deploy in your own Cloudflare account. Workers, D1, and Queues provide a low-operations path that can fit within Cloudflare's free-plan limits for small workloads. You keep control of APNs credentials, device data, audience labels, and delivery records instead of handing them to a hosted push vendor. The portable server, native SwiftUI admin client, and Swift SDK work together as one self-managed system.
+
+[Deploy to Cloudflare](https://deploy.workers.cloudflare.com/?url=https://github.com/SodaPush/Server) · [Server setup guide](https://github.com/SodaPush/Server#cloudflare-deployment)
 
 ## Repositories
 
@@ -12,7 +14,7 @@ SodaPush is an open-source, self-hosted Apple Push Notification service. It comb
 
 ## Highlights
 
-- Deploy on Cloudflare or your own Docker/Node.js host.
+- Deploy into your own Cloudflare account using the setup script or Cloudflare's deploy-button flow; Docker/Node.js remains available.
 - Keep APNs signing keys, registration secrets, and device tokens encrypted at rest.
 - Separate sandbox and production devices and APNs credentials.
 - Target all active devices, explicit installations, custom tags, device languages, or application-defined user IDs.
@@ -28,6 +30,8 @@ SodaPush is an open-source, self-hosted Apple Push Notification service. It comb
 4. Send notifications from the admin client to an environment and audience using the default APNs key or an explicitly selected key.
 
 Each repository contains its own deployment, integration, security, and testing documentation.
+
+Cloudflare's free plan has usage limits, and SodaPush still requires Apple APNs credentials. Self-deployment also means you are responsible for secret backups and access control.
 
 ## License
 
