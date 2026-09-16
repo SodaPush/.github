@@ -12,6 +12,10 @@ SodaPush is an open-source APNs backend you deploy in your own Cloudflare accoun
 | [AdminClient-Swift](https://github.com/SodaPush/AdminClient-Swift) | Native iOS and macOS app for apps, credentials, devices, audiences, pushes, and access control |
 | [SDK-Swift](https://github.com/SodaPush/SDK-Swift) | Swift package for signed device registration on Apple platforms |
 
+> [!WARNING]
+>
+> Please use SodaPush reasonably. SodaPush project are only provided as tools, and SodaPush itself is not a service provider. We are not responsible for the information sent or the behavior of the users.
+
 ## Highlights
 
 - Deploy into your own Cloudflare account using the setup script or Cloudflare's deploy-button flow; Docker/Node.js remains available.
