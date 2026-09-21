@@ -11,6 +11,7 @@ SodaPush is an open-source APNs backend you deploy in your own Cloudflare accoun
 | [Server](https://github.com/SodaPush/Server) | Hono API for Cloudflare Workers/D1/Queues or self-hosted Node.js/SQLite |
 | [AdminClient-Swift](https://github.com/SodaPush/AdminClient-Swift) | Native iOS and macOS app for apps, credentials, devices, audiences, pushes, and access control |
 | [SDK-Swift](https://github.com/SodaPush/SDK-Swift) | Swift package for signed device registration on Apple platforms |
+| [PushAction](https://github.com/SodaPush/PushAction) | GitHub Action for sending deployment and workflow notifications through your Server |
 
 > [!WARNING]
 >
@@ -23,7 +24,8 @@ SodaPush is an open-source APNs backend you deploy in your own Cloudflare accoun
 - Separate sandbox and production devices and APNs credentials.
 - Target all active devices, explicit installations, custom tags, device languages, or application-defined user IDs.
 - Send alert, background, Live Activity, and custom JSON payloads.
-- Inspect delivery results and remove completed push history.
+- Inspect the original audience and payload alongside delivery results, and remove completed push history.
+- Send notifications from GitHub workflows with the reusable PushAction.
 - Use role-based access with one immutable instance owner and per-app administrators, developers, and viewers.
 
 ## How the pieces fit together
@@ -32,6 +34,7 @@ SodaPush is an open-source APNs backend you deploy in your own Cloudflare accoun
 2. Use [SodaPush Admin](https://github.com/SodaPush/AdminClient-Swift) to create an app, upload sandbox/production APNs keys, and create a registration key.
 3. Add [SodaPush SDK](https://github.com/SodaPush/SDK-Swift) to the receiving app and register its APNs device token.
 4. Send notifications from the admin client to an environment and audience using the default APNs key or an explicitly selected key.
+5. Optionally add [SodaPush PushAction](https://github.com/SodaPush/PushAction) to a GitHub workflow for automated release, build, or operations notifications.
 
 Each repository contains its own deployment, integration, security, and testing documentation.
 
